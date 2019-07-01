@@ -18,6 +18,9 @@
 		681A309822CA199700C8BDA0 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681A309722CA199700C8BDA0 /* ApiResponse.swift */; };
 		681A309B22CA1B4100C8BDA0 /* JobsListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681A309A22CA1B4100C8BDA0 /* JobsListingController.swift */; };
 		681A309D22CA1B6C00C8BDA0 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681A309C22CA1B6C00C8BDA0 /* ProgressHUD.swift */; };
+		681A309F22CA1BDB00C8BDA0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681A309E22CA1BDB00C8BDA0 /* BaseViewController.swift */; };
+		681A30A322CA1C3F00C8BDA0 /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681A30A122CA1C3F00C8BDA0 /* JobTableViewCell.swift */; };
+		681A30A422CA1C3F00C8BDA0 /* JobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 681A30A222CA1C3F00C8BDA0 /* JobTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		681A309722CA199700C8BDA0 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		681A309A22CA1B4100C8BDA0 /* JobsListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListingController.swift; sourceTree = "<group>"; };
 		681A309C22CA1B6C00C8BDA0 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		681A309E22CA1BDB00C8BDA0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		681A30A122CA1C3F00C8BDA0 /* JobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
+		681A30A222CA1C3F00C8BDA0 /* JobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 		681A307822CA114500C8BDA0 /* Job Finder */ = {
 			isa = PBXGroup;
 			children = (
+				681A30A022CA1C2E00C8BDA0 /* TableViewCells */,
 				681A309922CA1B0E00C8BDA0 /* Controllers */,
 				681A308B22CA15BA00C8BDA0 /* Utilities */,
 				681A307922CA114500C8BDA0 /* AppDelegate.swift */,
@@ -81,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				681A308C22CA15C500C8BDA0 /* NetworkManager */,
+				681A309E22CA1BDB00C8BDA0 /* BaseViewController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -120,6 +128,15 @@
 				681A309A22CA1B4100C8BDA0 /* JobsListingController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		681A30A022CA1C2E00C8BDA0 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				681A30A122CA1C3F00C8BDA0 /* JobTableViewCell.swift */,
+				681A30A222CA1C3F00C8BDA0 /* JobTableViewCell.xib */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +200,7 @@
 				681A308422CA114700C8BDA0 /* LaunchScreen.storyboard in Resources */,
 				681A308122CA114700C8BDA0 /* Assets.xcassets in Resources */,
 				681A307F22CA114500C8BDA0 /* Main.storyboard in Resources */,
+				681A30A422CA1C3F00C8BDA0 /* JobTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,9 +216,11 @@
 				681A309D22CA1B6C00C8BDA0 /* ProgressHUD.swift in Sources */,
 				681A308E22CA15D700C8BDA0 /* NetworkManager.swift in Sources */,
 				681A307A22CA114500C8BDA0 /* AppDelegate.swift in Sources */,
+				681A309F22CA1BDB00C8BDA0 /* BaseViewController.swift in Sources */,
 				681A309822CA199700C8BDA0 /* ApiResponse.swift in Sources */,
 				681A309022CA161500C8BDA0 /* Connectivity.swift in Sources */,
 				681A309322CA182C00C8BDA0 /* SearchGovServiceProvider.swift in Sources */,
+				681A30A322CA1C3F00C8BDA0 /* JobTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
