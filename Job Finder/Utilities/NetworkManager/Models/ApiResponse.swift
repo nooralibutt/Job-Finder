@@ -6,12 +6,14 @@
 //  Copyright © 2019 NAB. All rights reserved.
 //
 
+import UIKit
+
 struct ApiResponse {
     var isSuccess: Bool
     var message: String?
-    var result: [String: Any]?
+    var result: [Any]?
     
-    init(_ json: [String: Any]) {
+    init(_ json: [Any]) {
         self.isSuccess = true
         self.message = "Success"
         self.result = json

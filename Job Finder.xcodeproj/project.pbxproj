@@ -21,6 +21,8 @@
 		681A309F22CA1BDB00C8BDA0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681A309E22CA1BDB00C8BDA0 /* BaseViewController.swift */; };
 		681A30A322CA1C3F00C8BDA0 /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681A30A122CA1C3F00C8BDA0 /* JobTableViewCell.swift */; };
 		681A30A422CA1C3F00C8BDA0 /* JobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 681A30A222CA1C3F00C8BDA0 /* JobTableViewCell.xib */; };
+		683B426922CA265200A8D569 /* JobDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683B426822CA265200A8D569 /* JobDetailViewController.swift */; };
+		683B426B22CA2AE900A8D569 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683B426A22CA2AE900A8D569 /* ServiceProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		681A309E22CA1BDB00C8BDA0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		681A30A122CA1C3F00C8BDA0 /* JobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
 		681A30A222CA1C3F00C8BDA0 /* JobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobTableViewCell.xib; sourceTree = "<group>"; };
+		683B426822CA265200A8D569 /* JobDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailViewController.swift; sourceTree = "<group>"; };
+		683B426A22CA2AE900A8D569 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 			children = (
 				681A309222CA182C00C8BDA0 /* SearchGovServiceProvider.swift */,
 				681A309422CA188A00C8BDA0 /* GithubServiceProvider.swift */,
+				683B426A22CA2AE900A8D569 /* ServiceProvider.swift */,
 			);
 			path = ServiceProviders;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				681A309A22CA1B4100C8BDA0 /* JobsListingController.swift */,
+				683B426822CA265200A8D569 /* JobDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -211,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				683B426B22CA2AE900A8D569 /* ServiceProvider.swift in Sources */,
 				681A309B22CA1B4100C8BDA0 /* JobsListingController.swift in Sources */,
 				681A309522CA188A00C8BDA0 /* GithubServiceProvider.swift in Sources */,
 				681A309D22CA1B6C00C8BDA0 /* ProgressHUD.swift in Sources */,
@@ -221,6 +228,7 @@
 				681A309022CA161500C8BDA0 /* Connectivity.swift in Sources */,
 				681A309322CA182C00C8BDA0 /* SearchGovServiceProvider.swift in Sources */,
 				681A30A322CA1C3F00C8BDA0 /* JobTableViewCell.swift in Sources */,
+				683B426922CA265200A8D569 /* JobDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

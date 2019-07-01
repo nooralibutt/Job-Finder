@@ -10,14 +10,6 @@ import Foundation
 import UIKit
 
 class NetworkManager {
-    #if DEBUG
-    static let BASE_URL = "http://amplifyd.herokuapp.com/api/"
-    #elseif DEBUG_STAGING
-    static let BASE_URL = "http://amplifyd.herokuapp.com/api/"
-    #else
-    static let BASE_URL = "http://amplifyd.herokuapp.com/api/"
-    #endif
-    
     fileprivate enum NetworkResponse:String {
         case success
         case authenticationError = "Unfortunately we encountered an error."
@@ -58,7 +50,7 @@ class NetworkManager {
             return
         }
         
-        guard let json = (try? JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableContainers)) as? [String: Any] else {
+        guard let json = (try? JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableContainers)) as? [Any] else {
             print("Not containing JSON")
             return
         }
@@ -68,7 +60,7 @@ class NetworkManager {
     
     //MARK:- Network Calls
     // Netwrok Call with URL Sessions
-    fileprivate class func fetchGenericData(urlString: String, paramsBag: [String: String], completion: @escaping (ApiResponse?) -> ()) {
+    class func fetchGenericData(urlString: String, paramsBag: [String: String], completion: @escaping (ApiResponse?) -> ()) {
         if Connectivity.isConnectedToInternet {
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
             
