@@ -9,18 +9,21 @@
 import UIKit
 
 struct GithubServiceProvider: ServiceProvider {
+    // 1: Change name
     var name: String { return "Git Hub" }
     var data: [Job]?
     
     func fetchData(position: String?, location: String?, completion: @escaping ([Job]?) -> ()) {
+        // 2: Provide base URL
         var baseURL = "https://jobs.github.com/positions.json"
         
+        // 3: Provide your own query system
         var params: String = ""
-        if let position = position, let encodedPosition = position.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+        if let position = position, !position.isEmpty, let encodedPosition = position.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
             params = "?description=\(encodedPosition)"
         }
         
-        if let location = location, let encodedLocation = location.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+        if let location = location, !location.isEmpty, let encodedLocation = location.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
             if params.isEmpty {
                 params = "?location=\(encodedLocation)"
             } else {
@@ -48,6 +51,7 @@ struct GithubServiceProvider: ServiceProvider {
         }
     }
     
+    // 4: Provide your own parsing
     func parseResponse(json: [String: Any]) -> Job {
         
         let title = json["title"] as? String

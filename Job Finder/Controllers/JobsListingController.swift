@@ -19,6 +19,8 @@ class JobsListingController: BaseViewController {
     private var providers: [ServiceProvider] = []
     private var alert: UIAlertController!
     
+    private var selectedProvider = 0
+    
     override func viewDidLoad() {
         self.configureTableView()
         
@@ -34,30 +36,20 @@ class JobsListingController: BaseViewController {
     
     private func hitSearchAPI() {
         self.showProgressHUD()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.hideProgressHUD()
-            
-            let count = Int.random(in: 0..<5)
-            
-            self.jobModels = []
-            
-            var campaign = Job(title: "Data Scientist - Microscopy Image Analysis", companyName: "New York Stem Cell Foundation")
-            for i in 0..<count {
-                campaign.title = campaign.title! + " \(i)"
-                self.jobModels?.append(campaign)
-            }
-            
+        self.providers[self.selectedProvider].fetchData(position: self.positionTextField.text, location: self.locationTextField.text, completion: { (jobs) in
+            self.jobModels = jobs
             self.reloadTableView()
-        }
+            self.hideProgressHUD()
+        })
     }
     
     func configureProviderArray() {
         // Add provider here
         providers = [GithubServiceProvider(data: nil), SearchGovServiceProvider(data: nil)]
         
-        providerButton.setTitle(providers[0].name, for: .normal)
+        providerButton.setTitle(providers[selectedProvider].name, for: .normal)
         self.showProgressHUD()
-        providers[0].fetchData(position: nil, location: nil, completion: { (jobs) in
+        providers[selectedProvider].fetchData(position: nil, location: nil, completion: { (jobs) in
             self.jobModels = jobs
             self.reloadTableView()
             self.hideProgressHUD()
@@ -70,14 +62,11 @@ class JobsListingController: BaseViewController {
             alert.addAction(UIAlertAction(title: providerString, style: .default , handler:{ (action) in
                 guard let title = action.title, let index = providerArray.firstIndex(of: title) else { return }
                 
+                self.selectedProvider = index
+                
                 self.providerButton.setTitle(title, for: .normal)
                 
-                self.showProgressHUD()
-                self.providers[index].fetchData(position: self.positionTextField.text, location: self.locationTextField.text, completion: { (jobs) in
-                    self.jobModels = jobs
-                    self.reloadTableView()
-                    self.hideProgressHUD()
-                })
+                self.hitSearchAPI()
             }))
         }
         
@@ -89,7 +78,7 @@ class JobsListingController: BaseViewController {
 
 extension JobsListingController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
+        self.hitSearchAPI()
         return true
     }
 }

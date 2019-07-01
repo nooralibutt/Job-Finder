@@ -52,6 +52,7 @@ class NetworkManager {
         
         guard let json = (try? JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableContainers)) as? [Any] else {
             print("Not containing JSON")
+            completion(ApiResponse(message: NetworkResponse.noData.rawValue))
             return
         }
         

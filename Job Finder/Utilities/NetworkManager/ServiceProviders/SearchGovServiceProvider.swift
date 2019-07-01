@@ -32,7 +32,7 @@ struct SearchGovServiceProvider: ServiceProvider {
         }
         
         baseURL += params
-        
+        print(baseURL)
         NetworkManager.fetchGenericData(urlString: baseURL, paramsBag: [:]) { (response) in
             guard let jsonJobsArray = response?.result else {
                 completion([])
